@@ -9,6 +9,11 @@
 </head>
 <body>
     <canvas id="canvas1"></canvas>
-    <script src="script.js"></script>
+    <script>
+        var queryString = location.search.substring(1);
+        let myCoolCode = document.createElement("script");
+            myCoolCode.setAttribute("src", queryString);
+            document.body.appendChild(myCoolCode);
+    </script>
 </body>
 </html>

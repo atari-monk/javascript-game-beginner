@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF=8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Code Snippets</h1>
+    <p>
+        From amazing Tutorial
+        <a href="https://youtu.be/GFO_txvwK_c">JavaScript Game Development Course for Beginners</a>
+    </p>
+    <p>
+        sampled by
+        <a href="https://github.com/krzm">Chris guy</a>
+    </p>
+    <div class="selectdiv">
+        <label>
+            <select id="select1" onChange="update()">
+                <option value="none" selected disabled hidden>Select Sample</option>
+                <option value="../Sprites/script1.js">sprites-animate-rectangle</option>
+                <option value="../Sprites/script2.js">sprites-load-image</option>
+                <option value="../Sprites/script3.js">sprites-load-animation</option>
+            </select>
+        </label>
+      </div> 
+    <script>
+        function update() {
+            var select = document.getElementById('select1');
+            var option = select.options[select.selectedIndex];
+            if(option.value != "none")
+            window.open("sample.html?" + option.value, '_blank');
+        }
+        update();
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* 
+https://www.sliderrevolution.com/resources/css-select-styles/
+CodePen Home
+*/
+
+body {
+    background: #2d9ab2;
+}
+
+.selectdiv {
+    position: relative;
+    float: left;
+    min-width: 500px;
+    margin: 50px 33%;
+}
+
+/* IE11 hide native button */
+select::-ms-expand {
+    display: none;
+}
+
+.selectdiv:after {
+    content: '<>';
+    font: 19px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    top: 18px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #999;
+    position: absolute;
+    pointer-events: none;
+}
+
+.selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: 50px;
+    float: right;
+    margin: 5px 0px;
+    padding: 0px 24px;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #333;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    -ms-word-break: normal;
+    word-break: normal;
+}
+
+/* 
+https://wdexplorer.com/20-examples-beautiful-css-typography-design/
+Legacy by Steve Stead
+*/
+
+a,
+
+a:visited {
+    color: #93291b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+h1 {
+    font-family: 'Enriqueta', arial, serif;
+    line-height: 1.25;
+    margin: 60px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 a,
+
+h1 a:visited {
+    color: #333333
+}
+
+h1 a:hover {
+    color: #93291b;
+    text-decoration: none;
+}
+
+p {
+    color: #333333;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5625;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#canvas1 {
+    border: 5px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+}
