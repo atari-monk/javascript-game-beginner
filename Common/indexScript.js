@@ -49,6 +49,10 @@ samples["parallax-speed-input"] = {
     page: parallaxPage2,
     script: script + "4" + js
 };
+samples["parallax-refactor"] = {
+    page: parallaxPage2,
+    script: script + "5" + js
+};
 
 function update() {
     var select = document.getElementById('select1');
