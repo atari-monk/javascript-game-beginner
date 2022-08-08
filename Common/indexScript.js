@@ -54,9 +54,17 @@ samples["parallax-refactor"] = {
     page: parallaxPage2,
     script: script + "5" + js
 };
-samples["npc-animations"] = {
+samples["npc-anim-proto"] = {
     page: npcAnimPage1,
     script: script + "1" + js
+};
+samples["npc-anim-class"] = {
+    page: npcAnimPage1,
+    script: script + "2" + js
+};
+samples["npc-anim1"] = {
+    page: npcAnimPage1,
+    script: script + "3" + js
 };
 
 function update() {
