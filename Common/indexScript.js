@@ -1,6 +1,7 @@
 const spritePage1 = "../Sprites/spritePage1.html";
 const spritePage2 = "../Sprites/spritePage2.html";
 const parallaxPage1 = "../Parallax/parallaxPage1.html";
+const parallaxPage2 = "../Parallax/parallaxPage2.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -43,6 +44,10 @@ samples["parallax-gap-fix"] = {
 samples["parallax-layers"] = {
     page: parallaxPage1,
     script: script + "3" + js
+};
+samples["parallax-speed-input"] = {
+    page: parallaxPage2,
+    script: script + "4" + js
 };
 
 function update() {
