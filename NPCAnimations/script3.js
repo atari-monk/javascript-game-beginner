@@ -20,7 +20,7 @@ class Enemy {
         this.x = Math.random() * (canvas.width - this.width);
         this.y = Math.random() * (canvas.height - this.height);
         this.frame = 0;
-        this.flapSpeed = Math.floor(Math.random * 3 + 1);
+        this.flapSpeed = Math.floor(Math.random() * 3 + 1);
     } 
     update(){
         this.x += Math.random() * 7 - 3.5;
