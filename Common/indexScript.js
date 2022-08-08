@@ -66,6 +66,10 @@ samples["npc-anim1"] = {
     page: npcAnimPage1,
     script: script + "3" + js
 };
+samples["npc-anim2"] = {
+    page: npcAnimPage1,
+    script: script + "4" + js
+};
 
 function update() {
     var select = document.getElementById('select1');
