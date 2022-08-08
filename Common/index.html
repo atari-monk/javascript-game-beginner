@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF=8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="indexStyle.css" />
 </head>
+
 <body>
     <h1>Code Snippets</h1>
     <p>
@@ -21,23 +23,17 @@
         <label>
             <select id="select1" onChange="update()">
                 <option value="none" selected disabled hidden>Select Sample</option>
-                <option value="../Sprites/script1.js">sprites-rect-anim</option>
-                <option value="../Sprites/script2.js">sprites-image</option>
-                <option value="../Sprites/script3.js">sprites-frame</option>
-                <option value="../Sprites/script4.js">sprites-animation</option>
-                <option value="../Sprites/script5.js">sprites-animation-notation-trick</option>
-                <option value="../Sprites/script6.js">sprites-animation-data</option>
+                <option value="sprites-rect-anim">sprites-rect-anim</option>
+                <option value="sprites-image">sprites-image</option>
+                <option value="sprites-frame">sprites-frame</option>
+                <option value="sprites-animation">sprites-animation</option>
+                <option value="sprites-animation-notation-trick">sprites-animation-notation-trick</option>
+                <option value="sprites-animation-data">sprites-animation-data</option>
+                <option value="sprites-animation-selector">sprites-animation-selector</option>
             </select>
         </label>
-      </div> 
-    <script>
-        function update() {
-            var select = document.getElementById('select1');
-            var option = select.options[select.selectedIndex];
-            if(option.value != "none")
-            window.open("sample.html?" + option.value, '_blank');
-        }
-        update();
-    </script>
+    </div>
+    <script src="indexScript.js"></script>
 </body>
+
 </html>
