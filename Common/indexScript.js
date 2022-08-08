@@ -70,6 +70,10 @@ samples["npc-anim2"] = {
     page: npcAnimPage1,
     script: script + "4" + js
 };
+samples["npc-anim3-circle"] = {
+    page: npcAnimPage1,
+    script: script + "5" + js
+};
 
 function update() {
     var select = document.getElementById('select1');
