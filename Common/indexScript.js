@@ -1,31 +1,35 @@
+const spritePage1 = "../Sprites/spritePage1.html";
+const spritePage2 = "../Sprites/spritePage2.html";
+const script = "script";
+const js = ".js"
 const samples = [];
 samples["sprites-rect-anim"] = {
-    page: "sample.html",
-    script: "../Sprites/script1.js"
+    page: spritePage1,
+    script: script + "1" + js
 };
 samples["sprites-image"] = {
-    page: "sample.html",
-    script: "../Sprites/script2.js"
+    page: spritePage1,
+    script: script + "2" + js
 };
 samples["sprites-frame"] = {
-    page: "sample.html",
-    script: "../Sprites/script3.js"
+    page: spritePage1,
+    script: script + "3" + js
 };
 samples["sprites-animation"] = {
-    page: "sample.html",
-    script: "../Sprites/script4.js"
+    page: spritePage1,
+    script: script + "4" + js
 };
 samples["sprites-animation-notation-trick"] = {
-    page: "sample.html",
-    script: "../Sprites/script5.js"
+    page: spritePage1,
+    script: script + "5" + js
 };
 samples["sprites-animation-data"] = {
-    page: "sample.html",
-    script: "../Sprites/script6.js"
+    page: spritePage1,
+    script: script + "6" + js
 };
 samples["sprites-animation-selector"] = {
-    page: "../Sprites/animSelector.html",
-    script: "script7.js"
+    page: spritePage2,
+    script: script + "7" + js
 };
 
 function update() {
