@@ -2,6 +2,7 @@ const spritePage1 = "../Sprites/spritePage1.html";
 const spritePage2 = "../Sprites/spritePage2.html";
 const parallaxPage1 = "../Parallax/parallaxPage1.html";
 const parallaxPage2 = "../Parallax/parallaxPage2.html";
+const npcAnimPage1 = "../NPCAnimations/NPCAnimPage1.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -52,6 +53,10 @@ samples["parallax-speed-input"] = {
 samples["parallax-refactor"] = {
     page: parallaxPage2,
     script: script + "5" + js
+};
+samples["npc-animations"] = {
+    page: npcAnimPage1,
+    script: script + "1" + js
 };
 
 function update() {
