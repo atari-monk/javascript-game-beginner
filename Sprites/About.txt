@@ -1,3 +1,7 @@
 script1 - Animate rectangle
 script2 - Load image
-script3 - Load animation
+script3 - Load frame
+script4 - Load animation
+script5 - Load animation - notation trick
+script6 - Load animation - based on data
+script7 - Load animation - animation selector page
