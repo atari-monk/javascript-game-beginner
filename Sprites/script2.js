@@ -4,7 +4,7 @@ const CANVAS_HEIGHT = canvas.height = 600;
 const ctx = canvas.getContext('2d');
 
 const playerImage = new Image();
-playerImage.src = "../Assets/shadow_dog.png";
+playerImage.src = "Assets/shadow_dog.png";
 
 function animate(){
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);

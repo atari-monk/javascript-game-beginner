@@ -1,5 +1,6 @@
 const spritePage1 = "../Sprites/spritePage1.html";
 const spritePage2 = "../Sprites/spritePage2.html";
+const parallaxPage1 = "../Parallax/parallaxPage1.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -30,6 +31,18 @@ samples["sprites-animation-data"] = {
 samples["sprites-animation-selector"] = {
     page: spritePage2,
     script: script + "7" + js
+};
+samples["parallax-gap"] = {
+    page: parallaxPage1,
+    script: script + "1" + js
+};
+samples["parallax-gap-fix"] = {
+    page: parallaxPage1,
+    script: script + "2" + js
+};
+samples["parallax-layers"] = {
+    page: parallaxPage1,
+    script: script + "3" + js
 };
 
 function update() {
