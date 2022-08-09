@@ -70,9 +70,25 @@ samples["npc-anim2"] = {
     page: npcAnimPage1,
     script: script + "4" + js
 };
-samples["npc-anim3-circle"] = {
+samples["npc-anim3-pattern1"] = {
     page: npcAnimPage1,
     script: script + "5" + js
+};
+samples["npc-anim3-pattern2"] = {
+    page: npcAnimPage1,
+    script: script + "6" + js
+};
+samples["npc-anim3-pattern3"] = {
+    page: npcAnimPage1,
+    script: script + "7" + js
+};
+samples["npc-anim3-pattern4"] = {
+    page: npcAnimPage1,
+    script: script + "8" + js
+};
+samples["npc-anim4"] = {
+    page: npcAnimPage1,
+    script: script + "9" + js
 };
 
 function update() {
