@@ -5,6 +5,7 @@ const parallaxPage2 = "../Parallax/parallaxPage2.html";
 const npcAnimPage1 = "../NPCAnimations/NPCAnimPage1.html";
 const collisionDetectPage1 = "../collisionDetection/circle_collision_detection.html";
 const collisionDetectPage2 = "../collisionDetection/rect_collision_detection.html";
+const animTriggerPage1 = "../AnimTrigger/animTriggerPage1.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -99,6 +100,10 @@ samples["collision-detection1"] = {
 samples["collision-detection2"] = {
     page: collisionDetectPage2,
     script: script + "2" + js
+};
+samples["anim-trigger1"] = {
+    page: animTriggerPage1,
+    script: script + "1" + js
 };
 
 function update() {
