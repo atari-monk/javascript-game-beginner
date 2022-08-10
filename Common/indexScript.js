@@ -3,6 +3,8 @@ const spritePage2 = "../Sprites/spritePage2.html";
 const parallaxPage1 = "../Parallax/parallaxPage1.html";
 const parallaxPage2 = "../Parallax/parallaxPage2.html";
 const npcAnimPage1 = "../NPCAnimations/NPCAnimPage1.html";
+const collisionDetectPage1 = "../collisionDetection/circle_collision_detection.html";
+const collisionDetectPage2 = "../collisionDetection/rect_collision_detection.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -89,6 +91,14 @@ samples["npc-anim3-pattern4"] = {
 samples["npc-anim4"] = {
     page: npcAnimPage1,
     script: script + "9" + js
+};
+samples["collision-detection1"] = {
+    page: collisionDetectPage1,
+    script: script + "1" + js
+};
+samples["collision-detection2"] = {
+    page: collisionDetectPage2,
+    script: script + "2" + js
 };
 
 function update() {
