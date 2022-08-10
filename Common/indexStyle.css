@@ -2,6 +2,10 @@ body {
     background: #2d9ab2;
 }
 
+h1 {
+    font-size: xx-large;
+}
+
 table, th, td {
     /* border:1px solid black; */
     width:100%;
@@ -10,8 +14,16 @@ table, th, td {
 
 p {
     margin: 10px;
+    font-size: 20px;
 }
 
 select {
     margin-top: 50px;
+    font-size: 20px;
+}
+
+.bestSample {
+    color: gold;
+    font-size: 24px;
+    font-weight: bold;
 }

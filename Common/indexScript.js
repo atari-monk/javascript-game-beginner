@@ -1,10 +1,10 @@
-const spritePage1 = "../Sprites/spritePage1.html";
-const spritePage2 = "../Sprites/spritePage2.html";
+const spritePage1 = "../Sprite/spritePage1.html";
+const spritePage2 = "../Sprite/spritePage2.html";
 const parallaxPage1 = "../Parallax/parallaxPage1.html";
 const parallaxPage2 = "../Parallax/parallaxPage2.html";
-const npcAnimPage1 = "../NPCAnimations/NPCAnimPage1.html";
-const collisionDetectPage1 = "../collisionDetection/circle_collision_detection.html";
-const collisionDetectPage2 = "../collisionDetection/rect_collision_detection.html";
+const npcAnimPage1 = "../NPCAnimation/NPCAnimPage1.html";
+const collisionDetectPage1 = "../CollisionDetection/rect_collision_detection.html";
+const collisionDetectPage2 = "../CollisionDetection/circle_collision_detection.html";
 const animTriggerPage1 = "../AnimTrigger/animTriggerPage1.html";
 const script = "script";
 const js = ".js"
@@ -104,6 +104,18 @@ samples["collision-detection2"] = {
 samples["anim-trigger1"] = {
     page: animTriggerPage1,
     script: script + "1" + js
+};
+samples["anim-trigger2"] = {
+    page: animTriggerPage1,
+    script: script + "2" + js
+};
+samples["anim-trigger3"] = {
+    page: animTriggerPage1,
+    script: script + "3" + js
+};
+samples["anim-trigger-audio"] = {
+    page: animTriggerPage1,
+    script: script + "4" + js
 };
 
 function update() {
