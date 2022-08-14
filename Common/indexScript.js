@@ -139,6 +139,10 @@ samples["game-collision"] = {
     page: gamePage2,
     script: script + "5" + js
 };
+samples["game-explosionAnim-sound"] = {
+    page: gamePage2,
+    script: script + "6" + js
+};
 
 function update() {
     var select = document.getElementById('select1');
