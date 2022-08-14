@@ -7,6 +7,7 @@ const collisionDetectPage1 = "../CollisionDetection/rect_collision_detection.htm
 const collisionDetectPage2 = "../CollisionDetection/circle_collision_detection.html";
 const animTriggerPage1 = "../AnimTrigger/animTriggerPage1.html";
 const gamePage1 = "../Game/gamePage1.html";
+const gamePage2 = "../Game/gamePage2.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -122,9 +123,21 @@ samples["game-rect"] = {
     page: gamePage1,
     script: script + "1" + js
 };
-samples["game"] = {
+samples["game-group"] = {
     page: gamePage1,
     script: script + "2" + js
+};
+samples["game-anim"] = {
+    page: gamePage1,
+    script: script + "3" + js
+};
+samples["game-score"] = {
+    page: gamePage1,
+    script: script + "4" + js
+};
+samples["game-collision"] = {
+    page: gamePage2,
+    script: script + "5" + js
 };
 
 function update() {
