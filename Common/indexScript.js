@@ -6,8 +6,8 @@ const npcAnimPage1 = "../NPCAnimation/npcAnimPage1.html";
 const collisionDetectPage1 = "../CollisionDetection/rect_collision_detection.html";
 const collisionDetectPage2 = "../CollisionDetection/circle_collision_detection.html";
 const animTriggerPage1 = "../AnimTrigger/animTriggerPage1.html";
-const gamePage1 = "../Game/gamePage1.html";
-const gamePage2 = "../Game/gamePage2.html";
+const gamePage1 = "Game/gamePage1.html";
+const gamePage2 = "Game/gamePage2.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -142,6 +142,10 @@ samples["game-collision"] = {
 samples["game-explosionAnim-sound"] = {
     page: gamePage2,
     script: script + "6" + js
+};
+samples["game-particles"] = {
+    page: gamePage2,
+    script: script + "7" + js
 };
 
 function update() {
