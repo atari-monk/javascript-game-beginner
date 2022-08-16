@@ -3,11 +3,10 @@ const spritePage2 = "Sprite/spritePage2.html";
 const parallaxPage1 = "Parallax/parallaxPage1.html";
 const parallaxPage2 = "Parallax/parallaxPage2.html";
 const npcAnimPage = "NPCAnim/npcAnim.html";
-const collisionDetectPage1 = "CollisionDetection/rect_collision_detection.html";
-const collisionDetectPage2 = "CollisionDetection/circle_collision_detection.html";
 const animTriggerPage = "AnimTrigger/animTrigger.html";
 const gamePage1 = "Game/gamePage1.html";
 const gamePage2 = "Game/gamePage2.html";
+const enemyPage = "EnemyClass/enemy.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -95,14 +94,6 @@ samples["npc-anim4"] = {
     page: npcAnimPage,
     script: script + "9" + js
 };
-samples["collision-detection1"] = {
-    page: collisionDetectPage1,
-    script: script + "1" + js
-};
-samples["collision-detection2"] = {
-    page: collisionDetectPage2,
-    script: script + "2" + js
-};
 samples["anim-trigger1"] = {
     page: animTriggerPage,
     script: script + "1" + js
@@ -146,6 +137,10 @@ samples["game-explosionAnim-sound"] = {
 samples["game-particles"] = {
     page: gamePage2,
     script: script + "7" + js
+};
+samples["enemy-subclassing1"] = {
+    page: enemyPage,
+    script: script + "1" + js
 };
 
 function update() {
