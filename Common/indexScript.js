@@ -2,10 +2,10 @@ const spritePage1 = "Sprite/spritePage1.html";
 const spritePage2 = "Sprite/spritePage2.html";
 const parallaxPage1 = "Parallax/parallaxPage1.html";
 const parallaxPage2 = "Parallax/parallaxPage2.html";
-const npcAnimPage1 = "NPCAnimation/npcAnimPage1.html";
+const npcAnimPage = "NPCAnim/npcAnim.html";
 const collisionDetectPage1 = "CollisionDetection/rect_collision_detection.html";
 const collisionDetectPage2 = "CollisionDetection/circle_collision_detection.html";
-const animTriggerPage1 = "AnimTrigger/animTrigger.html";
+const animTriggerPage = "AnimTrigger/animTrigger.html";
 const gamePage1 = "Game/gamePage1.html";
 const gamePage2 = "Game/gamePage2.html";
 const script = "script";
@@ -60,39 +60,39 @@ samples["parallax-refactor"] = {
     script: script + "5" + js
 };
 samples["npc-anim-proto"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "1" + js
 };
 samples["npc-anim-class"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "2" + js
 };
 samples["npc-anim1"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "3" + js
 };
 samples["npc-anim2"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "4" + js
 };
 samples["npc-anim3-pattern1"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "5" + js
 };
 samples["npc-anim3-pattern2"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "6" + js
 };
 samples["npc-anim3-pattern3"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "7" + js
 };
 samples["npc-anim3-pattern4"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "8" + js
 };
 samples["npc-anim4"] = {
-    page: npcAnimPage1,
+    page: npcAnimPage,
     script: script + "9" + js
 };
 samples["collision-detection1"] = {
@@ -104,19 +104,19 @@ samples["collision-detection2"] = {
     script: script + "2" + js
 };
 samples["anim-trigger1"] = {
-    page: animTriggerPage1,
+    page: animTriggerPage,
     script: script + "1" + js
 };
 samples["anim-trigger2"] = {
-    page: animTriggerPage1,
+    page: animTriggerPage,
     script: script + "2" + js
 };
 samples["anim-trigger3"] = {
-    page: animTriggerPage1,
+    page: animTriggerPage,
     script: script + "3" + js
 };
 samples["anim-trigger-audio"] = {
-    page: animTriggerPage1,
+    page: animTriggerPage,
     script: script + "4" + js
 };
 samples["game-rect"] = {
