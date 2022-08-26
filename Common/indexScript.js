@@ -142,6 +142,30 @@ samples["enemy-subclassing1"] = {
     page: enemyPage,
     script: script + "1" + js
 };
+samples["enemy-subclassing1"] = {
+    page: enemyPage,
+    script: script + "1" + js
+};
+samples["enemy-subclassing2"] = {
+    page: enemyPage,
+    script: script + "2" + js
+};
+samples["enemy-subclassing3"] = {
+    page: enemyPage,
+    script: script + "3" + js
+};
+samples["enemy-subclassing4"] = {
+    page: enemyPage,
+    script: script + "4" + js
+};
+samples["enemy-subclassing5"] = {
+    page: enemyPage,
+    script: script + "5" + js
+};
+samples["enemy-subclassing6"] = {
+    page: enemyPage,
+    script: script + "6" + js
+};
 
 function update() {
     var select = document.getElementById('select1');
