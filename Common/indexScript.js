@@ -7,6 +7,7 @@ const animTriggerPage = "AnimTrigger/animTrigger.html";
 const gamePage1 = "Game/gamePage1.html";
 const gamePage2 = "Game/gamePage2.html";
 const enemyPage = "EnemyClass/enemy.html";
+const scrollingGamePage = "ScrollingGame/scrollingGame.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -166,7 +167,54 @@ samples["enemy-subclassing6"] = {
     page: enemyPage,
     script: script + "6" + js
 };
-
+samples["scrolling-game1"] = {
+    page: scrollingGamePage,
+    script: script + "1" + js
+};
+samples["scrolling-game2"] = {
+    page: scrollingGamePage,
+    script: script + "2" + js
+};
+samples["scrolling-game3"] = {
+    page: scrollingGamePage,
+    script: script + "3" + js
+};
+samples["scrolling-game4"] = {
+    page: scrollingGamePage,
+    script: script + "4" + js
+};
+samples["scrolling-game5"] = {
+    page: scrollingGamePage,
+    script: script + "5" + js
+};
+samples["scrolling-game6"] = {
+    page: scrollingGamePage,
+    script: script + "6" + js
+};
+samples["scrolling-game7"] = {
+    page: scrollingGamePage,
+    script: script + "7" + js
+};
+samples["scrolling-game8"] = {
+    page: scrollingGamePage,
+    script: script + "8" + js
+};
+samples["scrolling-game9"] = {
+    page: scrollingGamePage,
+    script: script + "9" + js
+};
+samples["scrolling-game10"] = {
+    page: scrollingGamePage,
+    script: script + "10" + js
+};
+samples["scrolling-game11"] = {
+    page: scrollingGamePage,
+    script: script + "11" + js
+};
+samples["scrolling-game12"] = {
+    page: scrollingGamePage,
+    script: script + "12" + js
+};
 function update() {
     var select = document.getElementById('select1');
     var option = select.options[select.selectedIndex];
