@@ -28,7 +28,6 @@ window.addEventListener('load', function(){
     }
 
     class Player {
-        
     }
 
     class Background {
@@ -50,7 +49,7 @@ window.addEventListener('load', function(){
     }
 
     const input = new InputHandler();
-
+    
     function animate()
     {
         
