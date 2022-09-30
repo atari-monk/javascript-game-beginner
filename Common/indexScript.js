@@ -8,6 +8,7 @@ const gamePage1 = "Game/gamePage1.html";
 const gamePage2 = "Game/gamePage2.html";
 const enemyPage = "EnemyClass/enemy.html";
 const scrollingGamePage = "ScrollingGame/scrollingGame.html";
+const scrollingGamePage2 = "ScrollingGame/scrollingGame2.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -200,19 +201,19 @@ samples["scrolling-game8"] = {
     script: script + "8" + js
 };
 samples["scrolling-game9"] = {
-    page: scrollingGamePage,
+    page: scrollingGamePage2,
     script: script + "9" + js
 };
 samples["scrolling-game10"] = {
-    page: scrollingGamePage,
+    page: scrollingGamePage2,
     script: script + "10" + js
 };
 samples["scrolling-game11"] = {
-    page: scrollingGamePage,
+    page: scrollingGamePage2,
     script: script + "11" + js
 };
 samples["scrolling-game12"] = {
-    page: scrollingGamePage,
+    page: scrollingGamePage2,
     script: script + "12" + js
 };
 function update() {

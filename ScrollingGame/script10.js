@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
                     this.keys.indexOf(e.key) === -1
                 ) {
                     this.keys.push(e.key);
-                }
+                } else if (e.key === 'Enter' && gameOver) restartGame();
             });
             window.addEventListener("keyup", (e) => {
                 if (
@@ -40,7 +40,7 @@ window.addEventListener("load", function () {
             this.gameHeight = gameHeight;
             this.width = 200;
             this.height = 200;
-            this.x = 0;
+            this.x = 100;
             this.y = this.gameHeight - this.height;
             this.image = document.getElementById("playerImage");
             this.frameX = 0;
@@ -48,10 +48,16 @@ window.addEventListener("load", function () {
             this.maxFrame = 8;
             this.fps = 20;
             this.frameTimer = 0;
-            this.frameInterval = 1000/this.fps;
+            this.frameInterval = 1000 / this.fps;
             this.speed = 0;
             this.vy = 0;
             this.weight = 1;
+        }
+        restart() {
+            this.x = 100;
+            this.y = this.gameHeight - this.height;
+            this.frameY = 0;
+            this.maxFrame = 8;
         }
         draw(context) {
             context.drawImage(
@@ -68,21 +74,20 @@ window.addEventListener("load", function () {
         }
         update(input, deltaTime, enemies) {
             //collision det
-            enemies.forEach(enemy => {
-                const dx = (enemy.x + enemy.width/2) - (this.x + this.width/2);
-                const dy = (enemy.y + enemy.height/2) - (this.y + this.height/2);
-                const distance = Math.sqrt(dx*dx + dy*dy);
-                if(distance < enemy.width/2 + this.width/2)
-                {
+            enemies.forEach((enemy) => {
+                const dx =
+                    enemy.x + enemy.width / 2 - (this.x + this.width / 2);
+                const dy =
+                    enemy.y + enemy.height / 2 - (this.y + this.height / 2);
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < enemy.width / 2 + this.width / 2) {
                     gameOver = true;
                 }
             });
             //sprite anim
-            if (this.frameTimer > this.frameInterval){
-                if (this.frameX >= this.maxFrame)
-                    this.frameX = 0;
-                else 
-                    this.frameX++;
+            if (this.frameTimer > this.frameInterval) {
+                if (this.frameX >= this.maxFrame) this.frameX = 0;
+                else this.frameX++;
                 this.frameTimer = 0;
             } else {
                 this.frameTimer += deltaTime;
@@ -150,6 +155,9 @@ window.addEventListener("load", function () {
             this.x -= this.speed;
             if (this.x < 0 - this.width) this.x = 0;
         }
+        restart() {
+            this.x = 0;
+        }
     }
 
     class Enemy {
@@ -165,7 +173,7 @@ window.addEventListener("load", function () {
             this.maxFrame = 5;
             this.fps = 20;
             this.frameTimer = 0;
-            this.frameInterval = 1000/this.fps;
+            this.frameInterval = 1000 / this.fps;
             this.speed = 8;
             this.markedForDeletion = false;
         }
@@ -183,17 +191,15 @@ window.addEventListener("load", function () {
             );
         }
         update(deltaTime) {
-            if (this.frameTimer > this.frameInterval){
-                if (this.frameX >= this.maxFrame)
-                    this.frameX = 0;
-                else 
-                    this.frameX++;
+            if (this.frameTimer > this.frameInterval) {
+                if (this.frameX >= this.maxFrame) this.frameX = 0;
+                else this.frameX++;
                 this.frameTimer = 0;
             } else {
                 this.frameTimer += deltaTime;
             }
             this.x -= this.speed;
-            if (this.x < 0 - this.width) { 
+            if (this.x < 0 - this.width) {
                 this.markedForDeletion = true;
                 score++;
             }
@@ -201,7 +207,7 @@ window.addEventListener("load", function () {
     }
 
     function handleEnemies(deltaTime) {
-        if (enemyTimer > enemyInterval + randomEnemyInterval){
+        if (enemyTimer > enemyInterval + randomEnemyInterval) {
             enemies.push(new Enemy(canvas.width, canvas.height));
             console.log(enemies);
             randomEnemyInterval = Math.random() * 1000 + 500;
@@ -209,27 +215,36 @@ window.addEventListener("load", function () {
         } else {
             enemyTimer += deltaTime;
         }
-        enemies.forEach(enemy => {
+        enemies.forEach((enemy) => {
             enemy.draw(ctx);
             enemy.update(deltaTime);
         });
-        enemies = enemies.filter(enemy => !enemy.markedForDeletion);
+        enemies = enemies.filter((enemy) => !enemy.markedForDeletion);
     }
 
     function displayStatusText(context) {
-        context.font = '40px Helvetica';
-        context.fillStyle = 'black';
-        context.fillText('Score: ' + score, 20, 50);
-        context.fillStyle = 'white';
-        context.fillText('Score: ' + score, 20, 52);
-        if(gameOver)
-        {
-            context.textAlign = 'center';
-            context.fillStyle = 'black';
-            context.fillText('GAME OVER, try again!', canvas.width/2, 200);
-            context.fillStyle = 'white';
-            context.fillText('GAME OVER, try again!', canvas.width/2, 202);
+        context.textAlign = "left";
+        context.font = "40px Helvetica";
+        context.fillStyle = "black";
+        context.fillText("Score: " + score, 20, 50);
+        context.fillStyle = "white";
+        context.fillText("Score: " + score, 20, 52);
+        if (gameOver) {
+            context.textAlign = "center";
+            context.fillStyle = "black";
+            context.fillText("GAME OVER, press Enter to restart!", canvas.width / 2, 200);
+            context.fillStyle = "white";
+            context.fillText("GAME OVER, press Enter to restart!", canvas.width / 2, 202);
         }
+    }
+
+    function restartGame() {
+        player.restart();
+        background.restart();
+        enemies = [];
+        score = 0;
+        gameOver = false;
+        animate(0);
     }
 
     const input = new InputHandler();
