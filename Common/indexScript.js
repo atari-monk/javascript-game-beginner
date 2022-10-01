@@ -9,6 +9,7 @@ const gamePage2 = "Game/gamePage2.html";
 const enemyPage = "EnemyClass/enemy.html";
 const scrollingGamePage = "ScrollingGame/scrollingGame.html";
 const scrollingGamePage2 = "ScrollingGame/scrollingGame2.html";
+const scrollingGamePage3 = "ScrollingGame/scrollingGame3.html";
 const script = "script";
 const js = ".js"
 const samples = [];
@@ -213,7 +214,7 @@ samples["scrolling-game11"] = {
     script: script + "11" + js
 };
 samples["scrolling-game12"] = {
-    page: scrollingGamePage2,
+    page: scrollingGamePage3,
     script: script + "12" + js
 };
 function update() {
