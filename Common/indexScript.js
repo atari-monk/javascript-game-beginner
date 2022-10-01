@@ -217,6 +217,15 @@ samples["scrolling-game12"] = {
     page: scrollingGamePage3,
     script: script + "12" + js
 };
+samples["scrolling-game13"] = {
+    page: scrollingGamePage3,
+    script: script + "13" + js
+};
+samples["scrolling-game14"] = {
+    page: scrollingGamePage3,
+    script: script + "14" + js
+};
+
 function update() {
     var select = document.getElementById('select1');
     var option = select.options[select.selectedIndex];
