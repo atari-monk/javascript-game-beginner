@@ -1,18 +1,7 @@
-const spritePage1 = "Sprite/spritePage1.html";
-const spritePage2 = "Sprite/spritePage2.html";
-const parallaxPage1 = "Parallax/parallaxPage1.html";
-const parallaxPage2 = "Parallax/parallaxPage2.html";
-const npcAnimPage = "NPCAnim/npcAnim.html";
-const animTriggerPage = "AnimTrigger/animTrigger.html";
-const gamePage1 = "Game/gamePage1.html";
-const gamePage2 = "Game/gamePage2.html";
-const enemyPage = "EnemyClass/enemy.html";
-const scrollingGamePage = "ScrollingGame/scrollingGame.html";
-const scrollingGamePage2 = "ScrollingGame/scrollingGame2.html";
-const scrollingGamePage3 = "ScrollingGame/scrollingGame3.html";
 const script = "script";
 const js = ".js"
 const samples = [];
+const spritePage1 = "Sprite/spritePage1.html";
 samples["sprites-rect-anim"] = {
     page: spritePage1,
     script: script + "1" + js
@@ -37,10 +26,12 @@ samples["sprites-animation-data"] = {
     page: spritePage1,
     script: script + "6" + js
 };
+const spritePage2 = "Sprite/spritePage2.html";
 samples["sprites-animation-selector"] = {
     page: spritePage2,
     script: script + "7" + js
 };
+const parallaxPage1 = "Parallax/parallaxPage1.html";
 samples["parallax-gap"] = {
     page: parallaxPage1,
     script: script + "1" + js
@@ -53,6 +44,7 @@ samples["parallax-layers"] = {
     page: parallaxPage1,
     script: script + "3" + js
 };
+const parallaxPage2 = "Parallax/parallaxPage2.html";
 samples["parallax-speed-input"] = {
     page: parallaxPage2,
     script: script + "4" + js
@@ -61,6 +53,7 @@ samples["parallax-refactor"] = {
     page: parallaxPage2,
     script: script + "5" + js
 };
+const npcAnimPage = "NPCAnim/npcAnim.html";
 samples["npc-anim-proto"] = {
     page: npcAnimPage,
     script: script + "1" + js
@@ -97,6 +90,7 @@ samples["npc-anim4"] = {
     page: npcAnimPage,
     script: script + "9" + js
 };
+const animTriggerPage = "AnimTrigger/animTrigger.html";
 samples["anim-trigger1"] = {
     page: animTriggerPage,
     script: script + "1" + js
@@ -113,6 +107,7 @@ samples["anim-trigger-audio"] = {
     page: animTriggerPage,
     script: script + "4" + js
 };
+const gamePage1 = "Game/gamePage1.html";
 samples["game-rect"] = {
     page: gamePage1,
     script: script + "1" + js
@@ -129,6 +124,7 @@ samples["game-score"] = {
     page: gamePage1,
     script: script + "4" + js
 };
+const gamePage2 = "Game/gamePage2.html";
 samples["game-collision"] = {
     page: gamePage2,
     script: script + "5" + js
@@ -141,6 +137,7 @@ samples["game-particles"] = {
     page: gamePage2,
     script: script + "7" + js
 };
+const enemyPage = "EnemyClass/enemy.html";
 samples["enemy-subclassing1"] = {
     page: enemyPage,
     script: script + "1" + js
@@ -169,6 +166,7 @@ samples["enemy-subclassing6"] = {
     page: enemyPage,
     script: script + "6" + js
 };
+const scrollingGamePage = "ScrollingGame/scrollingGame.html";
 samples["scrolling-game1"] = {
     page: scrollingGamePage,
     script: script + "1" + js
@@ -201,6 +199,7 @@ samples["scrolling-game8"] = {
     page: scrollingGamePage,
     script: script + "8" + js
 };
+const scrollingGamePage2 = "ScrollingGame/scrollingGame2.html";
 samples["scrolling-game9"] = {
     page: scrollingGamePage2,
     script: script + "9" + js
@@ -213,6 +212,7 @@ samples["scrolling-game11"] = {
     page: scrollingGamePage2,
     script: script + "11" + js
 };
+const scrollingGamePage3 = "ScrollingGame/scrollingGame3.html";
 samples["scrolling-game12"] = {
     page: scrollingGamePage3,
     script: script + "12" + js
@@ -224,6 +224,11 @@ samples["scrolling-game13"] = {
 samples["scrolling-game14"] = {
     page: scrollingGamePage3,
     script: script + "14" + js
+};
+const statePage1 = "StateDesignPattern/state.html";
+samples["state1"] = {
+    page: statePage1,
+    script: script + "1" + js
 };
 
 function update() {
