@@ -5,7 +5,7 @@ export default class Player {
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
         this.states = [new StandingLeft(this), new StandingRight(this)];
-        this.currentState = this.states[states.STANDING_LEFT];
+        this.currentState = this.states[states.STANDING_RIGHT];
         this.image = document.getElementById('dogImage');
         this.width = 200;
         this.height = 181.83;

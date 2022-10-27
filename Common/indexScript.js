@@ -228,7 +228,11 @@ samples["scrolling-game14"] = {
 const statePage1 = "StateDesignPattern/state.html";
 samples["state1"] = {
     page: statePage1,
-    script: script + "1" + js
+    script: "State1/" + script + "1" + js
+};
+samples["state2"] = {
+    page: statePage1,
+    script: "State2/" + script + "2" + js
 };
 
 function update() {

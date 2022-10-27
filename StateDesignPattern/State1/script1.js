@@ -13,7 +13,6 @@ window.addEventListener('load', function(){
     const player = new Player(canvas.width, canvas.height);
     const input = new InputHandler();
 
-
     function animate(){
         ctx.clearRect(0,0,canvas.width, canvas.height);
         //console.log(input.lastKey);
