@@ -1,25 +1,26 @@
 export default class InputHandler {
     constructor() {
-        this.lastkey = '';
+        this.lastKey = '';
         this.keys = [];
-        //arrow function inherites scope of class (otherwise this.lastkey would be function scope)
+        //arrow function inherites scope of class
+        //(otherwise this.lastkey would be function scope)
         window.addEventListener('keydown', (e) => {
             switch (e.key) {
                 case 'ArrowLeft':
-                    this.lastkey = "PRESS left";
+                    this.lastKey = "PRESS left";
                     break
                 case 'ArrowRight':
-                    this.lastkey = "PRESS right";
+                    this.lastKey = "PRESS right";
                     break
             }
         });
         window.addEventListener('keyup', (e) => {
             switch (e.key) {
                 case 'ArrowLeft':
-                    this.lastkey = "RELEASE left";
+                    this.lastKey = "RELEASE left";
                     break
                 case 'ArrowRight':
-                    this.lastkey = "RELEASE right";
+                    this.lastKey = "RELEASE right";
                     break
             }
         });
