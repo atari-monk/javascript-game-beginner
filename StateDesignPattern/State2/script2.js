@@ -1,5 +1,5 @@
-import Player from '../State1/player.js';
-import InputHandler from '../State1/input.js';
+import Player from './player.js';
+import InputHandler from './input.js';
 import {drawStatusText} from '../State1/utils.js';
 
 window.addEventListener('load', function(){
