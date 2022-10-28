@@ -234,6 +234,10 @@ samples["state2"] = {
     page: statePage1,
     script: "State2/" + script + "2" + js
 };
+samples["state3"] = {
+    page: statePage1,
+    script: "State3/" + script + "3" + js
+};
 
 function update() {
     var select = document.getElementById('select1');
