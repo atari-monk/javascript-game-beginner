@@ -259,6 +259,10 @@ samples["game2d1"] = {
     page: game2dPage1,
     script: "Page1/" + script + "1" + js
 };
+samples["game2d2"] = {
+    page: game2dPage1,
+    script: "Page2/" + script + "2" + js
+};
 
 function update() {
     var select = document.getElementById('select1');
