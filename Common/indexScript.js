@@ -254,6 +254,11 @@ samples["state7"] = {
     page: statePage1,
     script: "State7/" + script + "7" + js
 };
+const game2dPage1 = "Game2d/game2d.html";
+samples["game2d1"] = {
+    page: game2dPage1,
+    script: "Page1/" + script + "1" + js
+};
 
 function update() {
     var select = document.getElementById('select1');
