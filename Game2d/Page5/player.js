@@ -6,7 +6,6 @@ export class Player {
         this.width = 100;
         this.heigth = 91.3;
         this.x = 0;
-        //console.log(this.game.height);
         this.y = this.game.height - this.heigth - this.game.groundMargin;
         this.vy = 0;
         this.weight = 1;

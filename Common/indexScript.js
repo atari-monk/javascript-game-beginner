@@ -272,8 +272,9 @@ samples["game2d4"] = {
     page: game2dPage2,
     script: "Page4/" + script + "4" + js
 };
+const game2dPage3 = "Game2d/game2d3.html";
 samples["game2d5"] = {
-    page: game2dPage2,
+    page: game2dPage3,
     script: "Page5/" + script + "5" + js
 };
 
