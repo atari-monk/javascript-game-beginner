@@ -267,9 +267,14 @@ samples["game2d3"] = {
     page: game2dPage1,
     script: "Page3/" + script + "3" + js
 };
+const game2dPage2 = "Game2d/game2d2.html";
 samples["game2d4"] = {
-    page: game2dPage1,
+    page: game2dPage2,
     script: "Page4/" + script + "4" + js
+};
+samples["game2d5"] = {
+    page: game2dPage2,
+    script: "Page5/" + script + "5" + js
 };
 
 function update() {
