@@ -34,5 +34,29 @@ export class Splash extends Particle {
 }
 
 export class Fire extends Particle {
-
+    constructor(game, x, y){
+        super(game);
+        this.image = fire;
+        this.size = Math.random() * 100 + 100;
+        this.x = x;
+        this.y = y;
+        this.speedX = 1;
+        this.speedY = 1;
+        this.angle = 0;
+        this.va = Math.random() * .2 - .1;
+    }
+    update(){
+        super.update();
+        this.angle += this.va;
+        this.x += Math.sin(this.angle * 5); 
+    }
+    draw(ctx){
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        ctx.drawImage(this.image
+            , -this.size * .5, -this.size * .5
+            , this.size, this.size);
+        ctx.restore();
+    }
 }

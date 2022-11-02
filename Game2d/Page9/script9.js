@@ -24,6 +24,7 @@ window.addEventListener('load', function(){
             this.UI = new UI(this);
             this.enemies = [];
             this.particles = [];
+            this.maxParticles = 200;
             this.enemyTimer = 0;
             this.enemyInterval = 1000;
             this.debug = true;
@@ -51,6 +52,9 @@ window.addEventListener('load', function(){
                 particle.update();
                 if (particle.markedForDeletion) this.particles.splice(index, 1);
             });
+            if (this.particles.length > this.maxParticles){
+                this.particles = this.particles.slice(0, this.maxParticles);
+            }
         }
         draw(ctx){
             this.background.draw(ctx);
@@ -69,7 +73,6 @@ window.addEventListener('load', function(){
             else if (this.speed > 0 ) 
                 this.enemies.push(new ClimbingEnemy(this));
             this.enemies.push(new FlyingEnemy(this));
-            //console.log(this.enemies);
         }
     }
 
