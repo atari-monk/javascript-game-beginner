@@ -3,6 +3,9 @@ export const states = {
     Running: 1,
     Jumping: 2,
     Falling: 3,
+    Rolling: 4,
+    diving: 5,
+    hit: 6
 }
 
 class State {
@@ -24,7 +27,9 @@ export class Sitting extends State {
     handleInput(input){
         if(input.includes('ArrowLeft') || input.includes('ArrowRight')){
             this.player.setState(states.Running, 1);
-        }
+        } else if (input.includes('Enter')){
+            this.player.setState(states.Rolling, 2);
+        } 
     }
 }
 
@@ -43,7 +48,9 @@ export class Running extends State {
             this.player.setState(states.Sitting, 0);
         } else if (input.includes('ArrowUp')){
             this.player.setState(states.Jumping, 1);
-        }
+        } else if (input.includes('Enter')){
+            this.player.setState(states.Rolling, 2);
+        } 
     }
 }
 
@@ -61,7 +68,9 @@ export class Jumping extends State {
     handleInput(input){
         if(this.player.vy > this.player.weight){
             this.player.setState(states.Falling, 1);
-        }
+        } else if (input.includes('Enter')){
+            this.player.setState(states.Rolling, 2);
+        } 
     }
 }
 
@@ -78,6 +87,26 @@ export class Falling extends State {
     handleInput(input){
         if(this.player.onGround()){
             this.player.setState(states.Running, 1);
+        }
+    }
+}
+export class Rolling extends State {
+    constructor(player){
+        super("Rolling");
+        this.player = player;
+    }
+    enter(){
+        this.player.frameX = 0;
+        this.player.maxFrame = 6;
+        this.player.frameY = 6;
+    }
+    handleInput(input){
+        if(input.includes('Enter') === false && this.player.onGround()){
+            this.player.setState(states.Running, 1);
+        } else if(input.includes('Enter') === false && this.player.onGround() === false){
+            this.player.setState(states.Falling, 1);
+        } else if (input.includes('Enter') && input.includes('ArrowUp') && this.player.onGround()){
+            this.player.vy -= 27;
         }
     }
 }
