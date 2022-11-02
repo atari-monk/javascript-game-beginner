@@ -10,7 +10,7 @@ class Enemy {
     }
     update(deltaTime){
         //movement
-        this.x -= this.speedX;
+        this.x -= this.speedX + this.game.speed;
         this.y += this.speedY;
         //sprite animations
         if(this.frameTimer > this.frameInterval) {
@@ -38,22 +38,60 @@ export class FlyingEnemy extends Enemy {
         this.game = game;
         this.width = 60;
         this.height = 44;
-        this.x = this.game.width;
+        this.x = this.game.width + Math.random() * this.game.width * 0.5;
         this.y = Math.random() * this.game.height * .5;
-        this.speedX = 2;
+        this.speedX = Math.random() + 1;
         this.speedY = 0;
         this.maxFrame = 5;
         this.image = enemy_fly;
+        this.angle = 0;
+        this.va = Math.random() * .1 + .1;
     }
     update(deltaTime){
         super.update(deltaTime);
+        this.angle += this.va;
+        this.y += Math.sin(this.angle);
     }
 }
 
 export class GroundEnemy extends Enemy {
-
+    constructor(game){
+        super();
+        this.game = game;
+        this.width = 60;
+        this.height = 86;
+        this.x = this.game.width;
+        this.y = this.game.height - this.height - this.game.groundMargin;
+        this.image = enemy_plant;
+        this.speedX = 0;
+        this.speedY = 0;
+        this.maxFrame = 1;
+    }
 }
 
 export class ClimbingEnemy extends Enemy {
-
+    constructor(game){
+        super();
+        this.game = game;
+        this.width = 120;
+        this.height = 144;
+        this.x = this.game.width;
+        this.y = Math.random() * this.game.height * .5;
+        this.image = enemy_spider_big;
+        this.speedX = 0;
+        this.speedY = Math.random() > .5 ? 1 : -1;
+        this.maxFrame = 5;
+    }
+    update(deltaTime){
+        super.update(deltaTime);
+        if(this.y > this.game.height - this.height - this.game.groundMargin) this.speedY *= -1;
+        if(this.y < -this.height) this.markedForDeletion = true;
+    }
+    draw(ctx){
+        super.draw(ctx);
+        ctx.beginPath();
+        ctx.moveTo(this.x + this.width/2,0);
+        ctx.lineTo(this.x + this.width/2, this.y + 50);
+        ctx.stroke();
+    }
 }
