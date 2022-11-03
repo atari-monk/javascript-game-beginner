@@ -1,4 +1,4 @@
-import { Sitting, Running, Jumping, Falling, Rolling, states } from "./playerStates.js";
+import { Sitting, Running, Jumping, Falling, Rolling, Diving, Hit, states } from "./playerStates.js";
 
 export class Player {
     constructor(game){
@@ -20,7 +20,8 @@ export class Player {
         this.maxSpeed = 10;
         this.states = [new Sitting(this.game), new Running(this.game)
             , new Jumping(this.game), new Falling(this.game)
-            , new Rolling(this.game) ];
+            , new Rolling(this.game), new Diving(this.game)
+            , new Hit(this.game) ];
     }
     update(input, deltaTime){
         this.checkCollision();
@@ -30,12 +31,16 @@ export class Player {
         if (input.includes('ArrowRight')) this.speed = this.maxSpeed;
         else if(input.includes('ArrowLeft')) this.speed = -this.maxSpeed;
         else this.speed = 0;
+        //horizontal boundry
         if (this.x < 0) this.x = 0;
         if (this.x > this.game.width - this.width) this.x = this.game.width - this.width;
         //vertical movement
         this.y += this.vy;
         if(this.onGround() === false) this.vy += this.weight;
         else this.vy = 0;
+        //vertical boundry
+        if (this.y > this.game.height - this.heigth - this.game.groundMargin)
+            this.y = this.game.height - this.heigth - this.game.groundMargin;
         //sprite animations
         if(this.frameTimer > this.frameInterval) {
             this.frameTimer = 0;
@@ -68,11 +73,13 @@ export class Player {
                 && enemy.x + enemy.width > this.x
                 && enemy.y < this.y + this.heigth
                 && enemy.y + enemy.height > this.y){
-                //collision detected
                 enemy.markedForDeletion = true;
-                this.game.score++;
-            } else {
-                //no collision
+                if(this.currentState === this.states[states.Rolling] 
+                    || this.currentState === this.states[states.Diving]) {
+                    this.game.score++;
+                } else {
+                    this.setState(states.Hit, 0);
+                }
             }
         });
     }
