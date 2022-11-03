@@ -1,12 +1,13 @@
 import { Sitting, Running, Jumping, Falling, Rolling, Diving, Hit, states } from "./playerStates.js";
+import { CollisionAnimation } from "./collisionAnimation.js";  
 
 export class Player {
     constructor(game){
         this.game = game;
         this.width = 100;
-        this.heigth = 91.3;
+        this.height = 91.3;
         this.x = 0;
-        this.y = this.game.height - this.heigth - this.game.groundMargin;
+        this.y = this.game.height - this.height - this.game.groundMargin;
         this.vy = 0;
         this.weight = 1;
         this.image = player;
@@ -39,8 +40,8 @@ export class Player {
         if(this.onGround() === false) this.vy += this.weight;
         else this.vy = 0;
         //vertical boundry
-        if (this.y > this.game.height - this.heigth - this.game.groundMargin)
-            this.y = this.game.height - this.heigth - this.game.groundMargin;
+        if (this.y > this.game.height - this.height - this.game.groundMargin)
+            this.y = this.game.height - this.height - this.game.groundMargin;
         //sprite animations
         if(this.frameTimer > this.frameInterval) {
             this.frameTimer = 0;
@@ -52,15 +53,15 @@ export class Player {
     }
     draw(ctx){
         if(this.game.debug)
-            ctx.strokeRect( this.x, this.y, this.width, this.heigth);
+            ctx.strokeRect( this.x, this.y, this.width, this.height);
         ctx.drawImage(this.image
-            , this.frameX * this.width, this.frameY * this.heigth
-            , this.width, this.heigth
+            , this.frameX * this.width, this.frameY * this.height
+            , this.width, this.height
             , this.x, this.y
-            , this.width, this.heigth);
+            , this.width, this.height);
     }
     onGround(){
-        return this.y >= this.game.height - this.game.groundMargin - this.heigth ;
+        return this.y >= this.game.height - this.game.groundMargin - this.height ;
     }
     setState(state, speed){
         this.currentState = this.states[state];
@@ -71,9 +72,12 @@ export class Player {
         this.game.enemies.forEach(enemy => {
             if(    enemy.x < this.x + this.width 
                 && enemy.x + enemy.width > this.x
-                && enemy.y < this.y + this.heigth
-                && enemy.y + enemy.height > this.y){
+                && enemy.y < this.y + this.height
+                && enemy.y + enemy.height > this.y) {
                 enemy.markedForDeletion = true;
+                this.game.collisions.push(new CollisionAnimation(this.game, 
+                    enemy.x + enemy.width * .5, enemy.y + enemy.height * .5));
+                console.log(this.game.collisions);
                 if(this.currentState === this.states[states.Rolling] 
                     || this.currentState === this.states[states.Diving]) {
                     this.game.score++;

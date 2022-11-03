@@ -48,7 +48,7 @@ export class Running extends State {
         this.game.particles.unshift(
             new Dust(this.game
                 , this.game.player.x + this.game.player.width * .5
-                , this.game.player.y + this.game.player.heigth));
+                , this.game.player.y + this.game.player.height));
         if(input.includes('ArrowDown')){
             this.game.player.setState(states.Sitting, 0);
         } else if (input.includes('ArrowUp')){
@@ -111,7 +111,7 @@ export class Rolling extends State {
         this.game.particles.unshift(
             new Fire(this.game
                 , this.game.player.x + this.game.player.width * .5
-                , this.game.player.y + this.game.player.heigth * .5));
+                , this.game.player.y + this.game.player.height * .5));
         if(input.includes('Enter') === false && this.game.player.onGround()){
             this.game.player.setState(states.Running, 1);
         } else if(input.includes('Enter') === false && this.game.player.onGround() === false){
@@ -138,14 +138,14 @@ export class Diving extends State {
         this.game.particles.unshift(
             new Fire(this.game
                 , this.game.player.x + this.game.player.width * .5
-                , this.game.player.y + this.game.player.heigth * .5));
+                , this.game.player.y + this.game.player.height * .5));
         if(this.game.player.onGround()){
             this.game.player.setState(states.Running, 1);
             for (let i = 0; i < 30; i++) {
                 this.game.particles.unshift(
                     new Splash(this.game
                         , this.game.player.x + this.game.player.width * .5
-                        , this.game.player.y + this.game.player.heigth));            
+                        , this.game.player.y + this.game.player.height));            
             }
         } else if(input.includes('Enter') === false && this.game.player.onGround()){
             this.game.player.setState(states.Rolling, 2);
