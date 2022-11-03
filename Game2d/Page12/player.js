@@ -1,4 +1,4 @@
-import { Sitting, Running, Jumping, Falling, Rolling, Diving, Hit, states } from "./playerStates.js";
+import { Sitting, Running, Jumping, Falling, Rolling, Diving, Hit, stateFlag } from "./playerStates.js";
 import { CollisionAnimation } from "./collisionAnimation.js";  
 
 export class Player {
@@ -29,8 +29,12 @@ export class Player {
         this.currentState.handleInput(input);
         //horizontal movement
         this.x += this.speed;
-        if (input.includes('ArrowRight')) this.speed = this.maxSpeed;
-        else if(input.includes('ArrowLeft')) this.speed = -this.maxSpeed;
+        if (input.includes('ArrowRight')
+            && this.currentState !== this.states[stateFlag.Hit])
+                this.speed = this.maxSpeed;
+        else if(input.includes('ArrowLeft')
+            && this.currentState !== this.states[stateFlag.Hit])
+                this.speed = -this.maxSpeed;
         else this.speed = 0;
         //horizontal boundry
         if (this.x < 0) this.x = 0;
@@ -78,11 +82,11 @@ export class Player {
                 this.game.collisions.push(new CollisionAnimation(this.game, 
                     enemy.x + enemy.width * .5, enemy.y + enemy.height * .5));
                 console.log(this.game.collisions);
-                if(this.currentState === this.states[states.Rolling] 
-                    || this.currentState === this.states[states.Diving]) {
+                if(this.currentState === this.states[stateFlag.Rolling] 
+                    || this.currentState === this.states[stateFlag.Diving]) {
                     this.game.score++;
                 } else {
-                    this.setState(states.Hit, 0);
+                    this.setState(stateFlag.Hit, 0);
                 }
             }
         });

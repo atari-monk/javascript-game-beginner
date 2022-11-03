@@ -3,7 +3,7 @@ import {InputHandler} from './input.js';
 import {Background} from './background.js'
 import {FlyingEnemy, GroundEnemy, ClimbingEnemy} from './enemies.js'
 import {UI} from './UI.js'
-import {states} from './playerStates.js'
+import {stateFlag} from './playerStates.js'
 
 window.addEventListener('load', function(){
     const canvas = this.document.getElementById('canvas1');
@@ -28,17 +28,17 @@ window.addEventListener('load', function(){
             this.maxParticles = 200;
             this.enemyTimer = 0;
             this.enemyInterval = 1000;
-            this.debug = true;
+            this.debug = false;
             this.score = 0;
             this.fontColor = 'black';
             this.time = 0;
-            this.maxTime = 2000;
+            this.maxTime = 10000;
             this.gameOver = false;
-            this.player.currentState = this.player.states[states.Sitting];
+            this.player.currentState = this.player.states[stateFlag.Sitting];
             this.player.currentState.enter();
         }
         update(deltaTime){
-            this.time += this.deltaTime;
+            this.time += deltaTime;
             if( this.time > this.maxTime) this.gameOver = true;
             this.background.update();
             this.player.update(this.input.keys, deltaTime);
@@ -59,7 +59,7 @@ window.addEventListener('load', function(){
                 if (particle.markedForDeletion) this.particles.splice(index, 1);
             });
             if (this.particles.length > this.maxParticles){
-                this.particles = this.particles.slice(0, this.maxParticles);
+                this.particles.length = this.maxParticles;
             }
             //handle collisions
             this.collisions.forEach((collision, index) => {
