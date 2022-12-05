@@ -306,6 +306,11 @@ samples["game2d12"] = {
     page: game2dPage4,
     script: "Page12/" + script + "12" + js
 };
+const game2dPage5 = "Game2d/game2d5.html";
+samples["game2d13"] = {
+    page: game2dPage5,
+    script: "Page13/" + script + "13" + js
+};
 
 function update() {
     var select = document.getElementById('select1');

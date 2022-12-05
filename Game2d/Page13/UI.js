@@ -2,7 +2,8 @@ export class UI {
     constructor(game){
         this.game = game;
         this.fontSize = 30;
-        this.fontFamily = 'Helvetica';
+        this.fontFamily = 'Creepster';
+        this.livesImage = lives;
     }
     draw(ctx){
         ctx.save();
@@ -18,11 +19,15 @@ export class UI {
         //timer
         ctx.font = this.fontSize * .8 + 'px ' + this.fontFamily;
         ctx.fillText('Time: ' + (this.game.time * .001).toFixed(1), 20, 80);
+        //lives
+        for (let i = 0; i < this.game.lives; i++) {
+            ctx.drawImage(this.livesImage, 20 * i + 20, 95, 25, 25)
+        }
         //game over messagas
         if (this.game.gameOver){
             ctx.textAlign = 'center';
             ctx.font = this.fontSize * 2 + 'px ' + this.fontFamily;
-            if (this.game.score > 5){
+            if (this.game.score > this.game.winningScore){
                 ctx.fillText('Boo-yah', this.game.width * .5, this.game.height * .5 - 20);
                 ctx.font = this.fontSize * .7 + 'px ' + this.fontFamily;
                 ctx.fillText('What are creatures of the night afraid of? YOU!!!'

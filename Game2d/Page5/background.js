@@ -37,7 +37,7 @@ export class Background {
         this.layer4 = new Layer(this.game, this.width
             , this.height, .8, this.layer4image);
         this.layer5 = new Layer(this.game, this.width
-            , this.height, 10, this.layer5image);
+            , this.height, 1, this.layer5image);
         this.backgroundLayers = [this.layer1, this.layer2
             , this.layer3, this.layer4, this.layer5];
     }
